@@ -1,0 +1,97 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #0a5b31;
+}
+.card {
+  width: 640px;
+  height: 400px;
+  margin-left: 265px;
+  margin-right: 0px;
+  margin-top: 150px;
+  margin-bottom: 0px;
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
+  transition: 1s;
+}
+.card:hover {
+  transform: rotate(-3deg);
+}
+.card:hover .outside {
+  transform: rotateY(-130deg);
+}
+.outside,
+.inside {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  left: 50.1%;
+}
+.inside {
+  background: linear-gradient(to right, #ffdb27, #ffff94 70%);
+  line-height: 3;
+  padding: 0 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  left: 50%;
+}
+.outside {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 1;
+  transform-origin: left;
+  transition: 2s;
+  cursor: pointer;
+}
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+}
+.front {
+  background-color: #ffffff;
+}
+.back {
+  transform: rotateY(180deg);
+  background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+}
+.heart {
+  --c: rgb(255, 206, 30);
+  width: 200px;
+  aspect-ratio: 1;
+  border-image: radial-gradient(var(--c) 69%,#0000 70%) 84.5%/50%;
+  clip-path: polygon(-42% 0,50% 91%, 142% 0);
+  margin-top: 70px;
+  margin-left: 55px;
+}
+.outside p {
+  font-size: 23px;
+  margin-top: 50px;
+  text-align: center;
+  letter-spacing: 6px;
+  color: #000000;
+}
+.inside p {
+  font-size: 14px;
+  margin-top: 0px;
+  text-align: center;
+  letter-spacing: 3px;
+  color: #000000;
+}
+
+br {
+  display: block;
+  content: " ";
+  margin-top: -4px;
+}
